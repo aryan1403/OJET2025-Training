@@ -41,7 +41,19 @@
                 }
             }
         }
+        function TodoViewModel1() {
+            this.tasks = ko.observableArray([]);
+            this.newTask = ko.observable("");
+
+            this.addTask = () => {
+                if (this.newTask()) {
+                    this.tasks.push(new Task1(this.newTask()));
+                    this.newTask("");
+                }
+            }
+        }
         ko.applyBindings(new TodoViewModel());
+        ko.applyBindings(new TodoViewModel1());
     </script>
   </body>
 </html>
