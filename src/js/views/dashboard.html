@@ -1,0 +1,20 @@
+<!--
+ Copyright (c) 2014, 2025, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Dashboard Content Area</h1>
+  <div>
+      To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
+      <oj-c-checkbox id="enabledCheckboxOn" value="true">Enabled value true</oj-c-checkbox>
+      <oj-input-text
+              id="text-input"
+              value="{{value}}"
+              label-hint="Name"
+              label-edge="inside"></oj-input-text>
+
+      <oj-button id="button1" on-oj-action="[[submitname]]">Submit</oj-button>
+      <oj-bind-text value="[[value]]"></oj-bind-text>
+  </div>
+</div>
