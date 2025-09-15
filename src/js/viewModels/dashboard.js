@@ -120,3 +120,5 @@ define([
    */
   return DashboardViewModel;
 });
+
+
