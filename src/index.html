@@ -42,7 +42,7 @@
          ** query size for a phone format and hidden until a user clicks on
          ** the header hamburger icon.
       -->
-      <oj-drawer-popup id="navDrawer" edge="start" opened="{{sideDrawerOn}}"
+      <!-- <oj-drawer-popup id="navDrawer" edge="start" opened="{{sideDrawerOn}}"
                        modality="modeless" role="navigation"
                        class="oj-bg-neutral-170 oj-color-invert">
         <oj-navigation-list id="navDrawerList" data="[[navDataProvider]]"
@@ -52,15 +52,8 @@
         </oj-navigation-list>
       </oj-drawer-popup>
       <div id="pageContent" class="oj-web-applayout-page">
-        <!--
-           ** Oracle JET V19.0.0 web application header pattern.
-           ** Please see the demos under Cookbook/Patterns/App Shell: Web
-           ** and the CSS documentation under Support/API Docs/Non-Component Styling
-           ** on the JET website for more information on how to use this pattern.
-        -->
         <header role="banner" class="oj-web-applayout-header">
           <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
-            <!-- Drawer toggle button -->
             <div class="oj-flex-bar-start oj-md-hide">
               <oj-button id="drawerToggleButton" class="oj-button-lg" on-oj-action="[[toggleDrawer]]" chroming="borderless" display="icons">
                 <span slot="startIcon" class="oj-web-applayout-offcanvas-icon"></span>
@@ -72,7 +65,6 @@
               <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name"><oj-bind-text value="[[appName]]"></oj-bind-text></h1>
             </div>
             <div class="oj-flex-bar-end">
-              <!-- Responsive Toolbar -->
               <oj-toolbar>
                 <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="borderless">
                   <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
@@ -95,7 +87,7 @@
                                 selection="{{selection.path}}">
             </oj-tab-bar>
           </div>
-        </header>
+        </header> -->
         <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleAdapter.koObservableConfig]]">
         </oj-module>
         <footer class="oj-web-applayout-footer" role="contentinfo">
