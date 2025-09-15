@@ -15,35 +15,38 @@
                     Start
                   </oj-button>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua. Venenatis a condimentum vitae sapien pellentesque habitant
-                  morbi tristique senectus. Hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat
-                  consequat mauris nunc congue nisi vitae. Parturient montes nascetur ridiculus mus mauris
-                  vitae ultricies. Fermentum leo vel orci porta non pulvinar neque laoreet.
-                </p>
-                <p>
-                  Non arcu risus quis varius quam quisque. In metus vulputate eu scelerisque felis imperdiet
-                  proin fermentum leo. Pretium viverra suspendisse potenti nullam ac tortor vitae. Bibendum
-                  arcu vitae elementum curabitur. Fermentum leo vel orci porta. Nisl vel pretium lectus quam
-                  id leo in. Lorem ipsum dolor sit amet consectetur. Orci sagittis eu volutpat odio facilisis
-                  mauris sit. Risus nullam eget felis eget nunc lobortis mattis aliquam faucibus.
-                </p>
-                <p>
-                  Pellentesque dignissim ac orci a elementum. Morbi at venenatis nisl. Lorem ipsum dolor sit
-                  amet, consectetur adipiscing elit. Nulla enim magna, mattis sit amet arcu molestie,
-                  fermentum pellentesque enim. Vivamus commodo est eget justo pharetra convallis. Phasellus
-                  hendrerit elementum ipsum, sit amet dignissim risus lacinia fringilla. Aenean non diam
-                  nulla. Maecenas imperdiet lacus accumsan venenatis tempus. Aliquam vulputate facilisis
-                  tellus bibendum vestibulum.
-                </p>
-                <p>
-                  Sed at odio luctus, tempus felis quis, hendrerit justo. Aliquam varius congue massa id
-                  fringilla. In consectetur urna et accumsan ornare. Quisque consequat consequat lorem, et
-                  euismod metus faucibus vitae. Sed sit amet risus a leo aliquet imperdiet. Cras pulvinar
-                  consequat feugiat. Proin tristique congue dignissim. Phasellus in erat ultrices, mollis orci
-                  in, consectetur arcu.
-                </p>
+                <oj-bind-dom config="[[ config ]]"></oj-bind-dom>
+                
+                <oj-button id="button1" on-oj-action="[[clickListener1]]">Click me!</oj-button>
+                <button id="button2" on-click="[[clicklistener2]]">Click me</button>
+                <oj-bind-text value="[[message]]"></oj-bind-text>
+                <h4 :style.color="[[myColor]]">List of Users</h4>
+            <oj-button id="addPerson" class="oj-button-sm" on-oj-action="[[addUser]]">Add User</oj-button>
+            <ul>
+              <oj-bind-for-each data="[[dataProvider]]">
+                <template>
+                  <li class="oj-flex oj-sm-align-items-center">
+                    <oj-bind-if test="[[showAnotherValue]]">
+                      <oj-bind-text value="[[$current.observableIndex]]"></oj-bind-text> :
+                    </oj-bind-if>
+                    <oj-bind-text value="[[$current.data.name]]"></oj-bind-text>
+                    <oj-button
+                      class="oj-button-sm oj-sm-margin-1x-vertical"
+                      chroming="borderless"
+                      display="icons"
+                      on-oj-action="[[removeUser]]">
+                      <span slot="startIcon" class="oj-ux-ico-close"></span>
+                      Remove
+                    </oj-button>
+                  </li>
+                </template>
+                <template slot="noData">
+                  <div class="oj-typography-body-md oj-typography-bold oj-sm-padding-2x-top">
+                    No Users to display
+                  </div>
+                </template>
+              </oj-bind-for-each>
+            </ul>
               </div>
          <div slot="start" class="demo-drawer-start" id="demo-drawer-start">
                 <div class="demo-drawer-header">
